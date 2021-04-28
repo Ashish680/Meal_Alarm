@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="com.ashish.mealalarm.models.TimeModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="5sp"
+        android:layout_margin="10sp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10sp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text='@{item.mealTime??""}'
+                android:textColor="@color/purple_500"
+                android:textSize="40sp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtMeal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text='@{item.food??""}'
+                android:gravity="end"
+                android:textColor="@color/sky_blue"
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
